@@ -14,7 +14,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-FROM docker.wso2.com/wso2-integration-control-plane:latest
+FROM ashwinta/choreo:my-custom-wso2-integration-control-plane-localrepo
 
 EXPOSE 9743
 
