@@ -22,7 +22,13 @@ EXPOSE 9743
 RUN addgroup -g 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 
-#Switch to wso2carbon user (userid 802) which is already created on the container 
-USER 802
+# Move product from wso2carbon home to choreouser home
+mv /home/wso2carbon/wso2-integration-control-plane-1.0.0 /home/choreouser
 
-ENTRYPOINT ["/home/wso2carbon/wso2-integration-control-plane-1.0.0/bin/dashboard.sh"]
+# Set proper permissions to product home directory
+chown -R choreouser:choreo /home/choreouser/wso2-integration-control-plane-1.0.0
+ 
+#Switch to wso2carbon user (userid 802) which is already created on the container 
+USER 10014
+
+ENTRYPOINT ["/home/choreouser/wso2-integration-control-plane-1.0.0/bin/dashboard.sh"]
