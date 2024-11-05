@@ -18,6 +18,9 @@ FROM ashwinta/choreo:my-custom-wso2-integration-control-plane-localrepo
 
 EXPOSE 9743
 
+# Ensure root privileges for these commands
+USER root
+
 # Create a new user with UID 10014. Creating to bypass choreo security checks 
 RUN addgroup --gid 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
@@ -26,9 +29,9 @@ RUN addgroup --gid 10014 choreo && \
 RUN mv /home/wso2carbon/wso2-integration-control-plane-1.0.0 /home/choreouser
 
 # Set proper permissions to product home directory
-RUN chown -R choreouser:choreo /home/choreouser/wso2-integration-control-plane-1.0.0
+RUN sudo chown -R choreouser:choreo /home/choreouser/wso2-integration-control-plane-1.0.0
  
-#Switch to wso2carbon user (userid 802) which is already created on the container 
+#Switch to choreouser (userid 10014)
 USER 10014
 
 ENTRYPOINT ["/home/choreouser/wso2-integration-control-plane-1.0.0/bin/dashboard.sh"]
