@@ -19,7 +19,7 @@ FROM ashwinta/choreo:my-custom-wso2-integration-control-plane-localrepo
 EXPOSE 9743
 
 # Create a new user with UID 10014. Creating to bypass choreo security checks 
-RUN addgroup -g 10014 choreo && \
+RUN addgroup --gid 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 
 # Move product from wso2carbon home to choreouser home
