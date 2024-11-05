@@ -15,5 +15,14 @@
 # under the License.
 
 FROM docker.wso2.com/wso2-integration-control-plane:latest
+
 EXPOSE 9743
+
+# Create a new user with UID 10014. Creating to bypass choreo security checks 
+RUN addgroup -g 10014 choreo && \
+    adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
+
+#Switch to wso2carbon user (userid 802) which is already created on the container 
+USER 802
+
 ENTRYPOINT ["/home/wso2carbon/wso2-integration-control-plane-1.0.0/bin/dashboard.sh"]
