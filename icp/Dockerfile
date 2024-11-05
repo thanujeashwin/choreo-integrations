@@ -23,7 +23,7 @@ USER root
 
 # Create a new user with UID 10014. Creating to bypass choreo security checks 
 RUN addgroup --gid 10014 choreo && \
-    adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
+    adduser  --disabled-password --uid 10014 --ingroup choreo choreouser
 
 # Move product from wso2carbon home to choreouser home
 RUN mv /home/wso2carbon/wso2-integration-control-plane-1.0.0 /home/choreouser
