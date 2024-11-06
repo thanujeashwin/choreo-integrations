@@ -31,6 +31,9 @@ RUN mv /home/wso2carbon/wso2-integration-control-plane-1.0.0 /tmp/wso2-integrati
 
 # Set proper permissions to product home directory
 RUN chown -R choreouser:choreo /tmp/wso2-integration-control-plane-1.0.0
+
+#Switch to tmo
+WORKDIR /tmp/wso2-integration-control-plane-1.0.0
  
 #Switch to choreouser (userid 10014)
 USER 10014
