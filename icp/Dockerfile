@@ -25,8 +25,6 @@ USER root
 RUN addgroup --gid 10014 choreo && \
     adduser  --disabled-password --no-create-home --uid 10014 --ingroup choreo --gecos "" choreouser
 
-#Switch to tmp
-WORKDIR /tmp
 
 # Move product from wso2carbon home to choreouser home
 RUN mv /home/wso2carbon/wso2-integration-control-plane-1.0.0 /tmp/
@@ -36,5 +34,8 @@ RUN chown -R choreouser:choreo /tmp/wso2-integration-control-plane-1.0.0
  
 #Switch to choreouser (userid 10014)
 USER 10014
+
+#Switch to tmp
+WORKDIR /tmp
 
 ENTRYPOINT ["/tmp/wso2-integration-control-plane-1.0.0/bin/dashboard.sh"]
