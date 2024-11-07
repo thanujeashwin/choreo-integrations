@@ -17,6 +17,7 @@
 FROM ashwinta/choreo:my-custom-wso2-integration-control-plane-localrepo
 
 EXPOSE 9743
+EXPOSE 9443
 
 # Ensure root privileges for these commands
 USER root
