@@ -1,0 +1,7 @@
+version: 0.1
+
+endpoints:
+  - name: AdminServiceEndpoint
+    port: 9443
+    type: TCP
+    networkVisibility: Public
