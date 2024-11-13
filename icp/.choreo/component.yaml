@@ -1,0 +1,7 @@
+schemaVersion: 1.0 
+ # icp endpoint configuration
+endpoints:
+- name: icp-service-endpoint
+  service:
+     port: 9743
+  type: REST
