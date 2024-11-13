@@ -16,7 +16,6 @@
 
 FROM ashwinta/choreo:my-custom-wso2-integration-control-plane-localrepo
 
-EXPOSE 9743
 
 # Ensure root privileges for these commands
 USER root
@@ -34,6 +33,9 @@ RUN chown -R choreouser:choreo /home/choreouser/wso2-integration-control-plane-1
  
 #Switch to choreouser (userid 10014)
 USER 10014
+
+# Expose port 9743 for the application
+EXPOSE 9743
 
 #Switch to choreouser home
 WORKDIR /home/choreouser
