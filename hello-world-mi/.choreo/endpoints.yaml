@@ -5,3 +5,13 @@ endpoints:
     type: REST
     context: /
     networkVisibility: Public
+  - name: MIHTTPPort
+    port: 8290
+    type: REST
+    context: /
+    networkVisibility: Public
+  - name: MIHTTPSPort
+    port: 8253
+    type: REST
+    context: /
+    networkVisibility: Public
