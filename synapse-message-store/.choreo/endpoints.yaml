@@ -1,7 +1,7 @@
-version: 0.1
-
+schemaVersion: 1.0 
+ # MI Admin service endpoint configuration
 endpoints:
-  - name: AdminServiceEndpoint
-    port: 9443
-    type: TCP
-    networkVisibility: Public
+- name: admin-service-endpoint
+  service:
+     port: 9443
+  type: REST
