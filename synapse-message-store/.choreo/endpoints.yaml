@@ -1,7 +1,7 @@
 version: 1.0
 endpoints:
   - name: MIAdminService
-    port: 9443
+    port: 9164
     type: REST
     context: /
     networkVisibility: Public
