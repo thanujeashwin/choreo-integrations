@@ -3,4 +3,5 @@ endpoints:
   - name: MIAdminService
     port: 9443
     type: REST
+    context: /
     networkVisibility: Public
