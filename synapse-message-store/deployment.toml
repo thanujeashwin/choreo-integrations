@@ -1,2 +1,6 @@
 [dashboard_config]
 dashboard_url = "https://625868cd-b250-48c0-9a0f-4bd04a536e69.nonprod.uoe.choreoapps.dev/dashboard/api/"
+management_hostname = "mimessagestore-1878897630"
+
+[management_api]
+protocols = "http"
