@@ -14,4 +14,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
+# Get the latest ICP image from WSO2 repository
 FROM docker.wso2.com/wso2-integration-control-plane:1.0.0.4
+
+# Expose port 9743 for the application
+EXPOSE 9743
